@@ -1,3 +1,6 @@
 <?php
 
-echo "hola xd";
+require_once "controlador/plantilla.publico.controlador.php";
+
+$inicio = new CargarPlantillaPublico();
+$inicio-> cargarPlantillaPublico();
