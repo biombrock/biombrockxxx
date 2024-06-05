@@ -6,11 +6,43 @@
         <script src="https://kit.fontawesome.com/76675d8dc9.js" crossorigin="anonymous"></script>
         <title>Biombrock</title>
     </head>
-    <body>   
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li class="logo"><a href="index.php?ruta=inicio">Logo</a></li>
+                    <li><a href="index.php?ruta=registro">Registro</a></li>
+                    <li><a href="index.php?ruta=ingreso">Ingreso</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <section>
-            <?php echo "hola mundo"; ?>
+        <section class="contenedor">
+
+        <?php
+
+            if(isset($_GET['ruta'])){
+
+                if($_GET['ruta'] == "registro" ||
+                    $_GET['ruta'] == "ingreso" ||
+                    $_GET['ruta'] == "inicio"){ 
+
+                    include $_GET['ruta'].".php";
+                        
+                }else{
+
+                    include "404.php";
+
+                }
+
+            }else{
+
+                include_once "inicio.php";
+
+            }
+                
+        ?>
+
         </section>
-        
     </body>
 </html>
